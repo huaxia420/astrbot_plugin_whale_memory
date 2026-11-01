@@ -1,0 +1,26 @@
+name: astrbot_plugin_whale_memory
+display_name: 鲸忆
+short_desc: 给大肥鱼一套真正的长期记忆：落库、日记、按需检索注入
+desc: >-
+  她原本只有 20 条群消息的滚动窗口，聊完就忘。
+  这个插件把每一轮对话落到本地 sqlite（jieba 分词 + FTS5 索引），
+  每天凌晨把前一天整理成一段日记，之后每次回答前按当前话题检索相关旧事，
+  以临时内容块注入，不改 system prompt、不污染上下文缓存。
+  提供 /记 /回忆 /记忆状态 /忘记 四个指令。
+  纯本地，无外部依赖，不上传任何数据。
+version: 1.0.0
+author: 大肥鱼
+repo: https://github.com/huaxia420/astrbot_plugin_whale_memory
+astrbot_version: ">=4.17.0"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
+  - telegram
+  - discord
+  - slack
+  - webchat
+tags:
+  - 记忆
+  - 长期记忆
+  - 人格

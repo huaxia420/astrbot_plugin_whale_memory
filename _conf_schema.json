@@ -1,0 +1,71 @@
+{
+  "enable": {
+    "type": "bool",
+    "description": "启用长期记忆",
+    "hint": "总开关。关掉后完全不写入、不注入，但已有数据保留。",
+    "default": true
+  },
+  "record_enable": {
+    "type": "bool",
+    "description": "记录对话",
+    "hint": "把每一轮对话（用户说的 / 她回的）写进本地数据库。",
+    "default": true
+  },
+  "inject_enable": {
+    "type": "bool",
+    "description": "回答前注入旧事",
+    "hint": "每次生成回复前，按当前话题检索相关记忆。",
+    "default": true
+  },
+  "inject_count": {
+    "type": "int",
+    "description": "每次注入条数",
+    "hint": "太多会稀释当前话题，建议 3-6。",
+    "default": 5
+  },
+  "inject_max_chars": {
+    "type": "int",
+    "description": "注入内容字数上限",
+    "default": 800
+  },
+  "inject_header": {
+    "type": "text",
+    "description": "注入内容的开头说明",
+    "hint": "{} 会被替换成记忆列表。别删掉「别编造」，模型很容易把记忆脑补成细节。",
+    "default": "【关于过去的记忆】以下是从长期记忆里翻出的旧事，和当前话题可能有关。用得上就自然带上，用不上就别硬提，也不要补充记忆里没有的细节。\n{}"
+  },
+  "digest_enable": {
+    "type": "bool",
+    "description": "每天自动写日记",
+    "hint": "把前一天的消息压缩成一段摘要，是长期记忆能撑过几个月的原因。会消耗少量模型额度。",
+    "default": true
+  },
+  "digest_hour": {
+    "type": "int",
+    "description": "日记生成时间（0-23 点）",
+    "default": 3
+  },
+  "digest_max_per_run": {
+    "type": "int",
+    "description": "每轮最多生成几篇日记",
+    "hint": "防止某天补写旧账时一口气烧太多额度。",
+    "default": 3
+  },
+  "retention_days": {
+    "type": "int",
+    "description": "原始对话保留天数",
+    "hint": "日记不删。设为 0 表示永久保留。",
+    "default": 180
+  },
+  "min_query_len": {
+    "type": "int",
+    "description": "触发检索的最短消息长度",
+    "hint": "太短的话（「在吗」）检索没有意义，直接跳过。",
+    "default": 4
+  },
+  "debug": {
+    "type": "bool",
+    "description": "调试日志",
+    "default": false
+  }
+}
