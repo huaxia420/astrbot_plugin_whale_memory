@@ -2,6 +2,27 @@
 
 给 AstrBot 一套真正的长期记忆。原来她只有 20 条群消息的滚动窗口，聊完就忘。
 
+## 安装
+
+```bash
+cd <AstrBot>/data/plugins
+git clone https://github.com/huaxia420/astrbot_plugin_whale_memory.git
+```
+
+重启 AstrBot 即可。插件会自动建库，无需手动初始化。
+
+要求 AstrBot >= 4.17.0，容器内需自带 `jieba` 和 SQLite（官方镜像已包含，无需额外安装）。
+
+## 升级
+
+```bash
+cd <AstrBot>/data/plugins/astrbot_plugin_whale_memory
+git pull
+```
+
+数据库在 `data/plugin_data/astrbot_plugin_whale_memory/memory.db`，升级不丢数据。
+
+
 ## 它做什么
 
 三层结构：
